@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  breathflow:
+    build: .
+    container_name: breathflow
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    networks:
+      - breathflow_net
+
+networks:
+  breathflow_net:
+    driver: bridge
